@@ -43,7 +43,7 @@ jobs:
           TAG=$(git describe --tags --always 2>/dev/null || echo "no-tag")
           echo "TAG_NAME=${TAG}" >> $GITHUB_ENV
       - name: Archive debug APK(s)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: OCR-${{ env.TAG_NAME }}-debug-apks
           path: app/build/outputs/**/*.apk
